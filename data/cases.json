@@ -78,6 +78,11 @@
         "type": "demo",
         "label": "デモを見る",
         "url": "https://ak2engine.ak2lab.com/"
+      },
+      {
+        "type": "repository",
+        "label": "GitHubリポジトリ",
+        "url": "https://github.com/ak2lab/ak2-engine"
       }
     ],
     "screenshots": [
@@ -479,6 +484,11 @@
         "type": "demo",
         "label": "デモを見る",
         "url": "https://game.ak2lab.com/tetris/"
+      },
+      {
+        "type": "repository",
+        "label": "GitHubリポジトリ",
+        "url": "https://github.com/ak2lab/tetris"
       }
     ],
     "screenshots": [
