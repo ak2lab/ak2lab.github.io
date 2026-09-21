@@ -1041,13 +1041,7 @@
     ],
     "title": "ポートフォリオサイト",
     "type": "Webサイト",
-    "links": [
-      {
-        "type": "production",
-        "label": "サイトを見る",
-        "url": "https://portfolio.ak2lab.com/"
-      }
-    ],
+    "links": [],
     "screenshots": [
       "assets/cases/portfolio-site/1.jpg"
     ]
