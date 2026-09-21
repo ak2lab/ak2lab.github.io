@@ -1,1218 +1,242 @@
 [
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "SNS / コミュニティ",
-    "description": "Next.js App Router + TypeScript + Prisma で構築した交流プラットフォーム。掲示板型投稿（画像複数枚・ハッシュタグ・ネストコメント）と、引用・リアクションに対応したタイムライン投稿の2軸に加え、コミュニティ（作成・公開/非公開・参加承認・管理人）、1対1 DM、通報・ブロック・ミュート、管理画面、通知、FAQ など SNS に必要な機能域を広く実装している。メンバー検索は住まい・年代・タグ・参加コミュニティ・活動状況など複数条件のファセット絞り込み。3カラムレイアウト（左ナビ・中央フィード・右レール）。認証は better-auth（ユーザー名/パスワード + Google OAuth）。DB は SQLite で、MySQL 用スキーマと切替機構も用意している。作品機能として、Gemini API による誤字チェック、投稿時の表現への注意喚起、プロフィール文の提案、類似コミュニティの検出などのAI補助を組み込んでいる。",
-    "highlights": [
-      "掲示板型投稿（画像複数枚・ハッシュタグ・ネストコメント）とタイムライン投稿（引用・リアクション）の2軸",
-      "コミュニティ（作成・参加承認・管理人）・DM・フォロー・通知・3カラムUI",
-      "メンバー検索のファセット絞り込み（住まい・年代・タグ・参加コミュニティ等）",
-      "通報・ブロック・ミュート・管理画面（ユーザー/コミュニティ/通報/AI設定）",
-      "better-auth（ユーザー名/パスワード + Google OAuth）",
-      "Gemini API のAI補助（誤字チェック・投稿時の注意喚起・プロフィール文提案・類似コミュニティ検出）"
-    ],
     "id": "cocolink",
-    "purpose": "SNSに必要な機能を、1つのサービスとしてどこまで実装できるかを確かめるために制作。掲示・タイムライン・コミュニティ・DM・検索・権限・モデレーション・管理画面まで含め、当初の想定をはるかに超える機能数・実装量になった。",
-    "summary": "掲示板・タイムライン・コミュニティ・DM・ファセット検索・モデレーション・管理画面までを1本にまとめた、多機能なSNS系Webアプリ。",
-    "target_users": "コミュニティ参加者、グループ運営者、個人間の交流をWeb上で行いたい利用者",
-    "tech_stack": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Prisma",
-      "Node.js",
-      "CSS",
-      "SQLite",
-      "MySQL",
-      "Zod",
-      "better-auth",
-      "Google OAuth",
-      "Gemini API",
-      "Groq API",
-      "Nginx"
-    ],
     "title": "CoCoLink",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://cocolink.f5.si/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/cocolink/1.jpg"
-    ]
+    "category": "SNS / コミュニティ",
+    "summary": "掲示板・タイムライン・コミュニティ・DM・ファセット検索・モデレーション・管理画面までを1本にまとめた、多機能なSNS系Webアプリ。",
+    "repository": "https://github.com/ak2lab/cocolink",
+    "image": "assets/cases/cocolink.jpg"
   },
   {
-    "case_type": "自主制作・実用",
-    "category": "制作基盤 / 静的サイト",
-    "description": "Eleventy（11ty）をベースに、YAMLでセクションを並べてページを構成する仕組みを実装。個別ページのHTMLを直接書かずにランディングページを組み立てられる。Canvas APIで描く26種の背景エフェクト、セクションの追加・作成・保存を扱うCLIを備える。エンジン本体のほか、CLI、ドキュメントサイト、雛形環境、デスクトップアプリからなる複数プロダクト構成で、エンジンとCLIはnpmで公開している。",
-    "highlights": [
-      "YAML駆動のセクション設計（個別ページのHTMLを直接書かずに構成）",
-      "Canvas APIで描く26種の背景エフェクト",
-      "コア層とレシピ層を分離したアーキテクチャ",
-      "セクションの追加・作成・保存を扱うCLI（npx ak2 add / create / save）",
-      "エンジンとCLIをnpmで公開（@ak2lab/engine）",
-      "同じエンジンで構築した約190ページのドキュメントサイト"
-    ],
-    "id": "ak2-engine",
-    "purpose": "WordPressに依存せず、静的HTMLとして公開できるサイトを継続的に制作するための基盤として開発。YAMLによるページ構成とCanvas表現を共通化し、サイトごとの情報設計・デザイン・実装に集中できるようにしている。",
-    "summary": "Eleventyを土台に、YAMLでページ構成とCanvas背景を組み立てる、自作の静的サイト制作基盤。",
-    "target_users": "静的サイトを制作するWeb制作者・開発者",
-    "tech_stack": [
-      "Eleventy",
-      "Node.js",
-      "JavaScript",
-      "Nunjucks",
-      "YAML",
-      "Markdown",
-      "Canvas API",
-      "CSS",
-      "Pagefind"
-    ],
-    "title": "AK²Engine",
-    "type": "自作フレームワーク / CLIツール",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://ak2engine.ak2lab.com/"
-      },
-      {
-        "type": "repository",
-        "label": "GitHubリポジトリ",
-        "url": "https://github.com/ak2lab/ak2-engine"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/ak2-engine/1.jpg"
-    ]
-  },
-  {
-    "case_type": "自主制作・実用",
-    "category": "Webデザイン / 開発者ツール",
-    "description": "Next.js App Router + TypeScript + React で構築した、Web制作向けの色調整ツール。カラーホイール（円状）、タイル、ピッカーの3種類の選色UIと、RGB/HSL/CMYK/HSV のスライダー切替、変更前後の配色比較、背景色指定つきのコントラスト比表示、HEXコピーに対応。色変換ロジックはUIから分離し、モード追加や検証をしやすい構成にしている。サーバー側の永続化はなく、ブラウザ上で完結する。",
-    "highlights": [
-      "RGB / HSL / CMYK / HSV のスライダー操作モード切替",
-      "カラーホイール・タイル・ピッカーの3種類の選色UI",
-      "変更前後の配色比較と背景色つきコントラスト比",
-      "HEX値の直接編集とクリップボードコピー",
-      "色変換ロジックをUIから分離した構成"
-    ],
     "id": "color-palette-studio",
-    "purpose": "Web制作時の配色検討、変更前後の比較、コントラスト確認を素早く行うための補助ツールとして制作。",
-    "summary": "RGB / HSL / CMYK / HSV の4モードとカラーホイールで色を調整し、配色比較とコントラスト確認ができるカラーパレットツール。",
-    "target_users": "Web制作者、Webデザイナー、フロントエンド開発者",
-    "tech_stack": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "CSS",
-      "Clipboard API",
-      "Pointer Events"
-    ],
     "title": "Color Palette Studio",
-    "type": "Webツール",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://tools.ak2lab.com/color/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/color-palette-studio/1.jpg"
-    ]
+    "category": "Webデザイン / 開発者ツール",
+    "summary": "RGB / HSL / CMYK / HSV の4モードとカラーホイールで色を調整し、配色比較とコントラスト確認ができるカラーパレットツール。",
+    "repository": "https://github.com/ak2lab/color-palette-studio",
+    "image": "assets/cases/color-palette-studio.jpg"
   },
   {
-    "case_type": "自主制作・サンプル",
-    "category": "Webサイト制作 / WordPress",
-    "description": "WordPress（SWELL テーマ + Contact Form 7）で構築したカウンセラー向けのサンプルサイト。トップにサービス訴求、相談内容、スタッフ紹介、実績、ブログ導線を配置し、下層にプロフィール、カウンセラー日誌、FAQ、お問い合わせを用意している。コンテンツはすべて架空。静的サイト生成CMSで制作した他のサンプルサイトとは別系統として、WordPress を使った小規模事業者向けサイトの構成例を示す。",
-    "highlights": [
-      "ホーム、ブログ、プロフィール、FAQ、お問い合わせの基本5ページ構成",
-      "カウンセラー向けの情報設計（サービス→不安解消→相談導線）",
-      "SWELL テーマをベースにしたレイアウトとContact Form 7",
-      "ブログ投稿一覧と最近の投稿導線"
-    ],
     "id": "sample-counselor-wordpress",
-    "purpose": "個人事業者・小規模事業者向けのWordPressサイトとして、情報設計、導線設計、ブログ運用、問い合わせフォームまで含めた基本構成を確認できるようにするため。",
-    "summary": "スピリチュアル心理カウンセラーを題材にした、ブログ・プロフィール・FAQ・お問い合わせを備えたWordPressサンプルサイト。",
-    "target_users": "カウンセラー、士業、講師、サロン運営者など個人事業者向けサイトの構成を参考にしたい人",
-    "tech_stack": [
-      "WordPress",
-      "SWELL",
-      "Contact Form 7",
-      "CSS"
-    ],
     "title": "WordPressブログサイト",
-    "type": "サンプルサイト",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://sample-blog.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/sample-counselor-wordpress/1.jpg"
-    ]
+    "category": "Webサイト制作 / WordPress",
+    "summary": "スピリチュアル心理カウンセラーを題材にした、ブログ・プロフィール・FAQ・お問い合わせを備えたWordPressサンプルサイト。",
+    "repository": "https://github.com/ak2lab/sample-counselor-wordpress",
+    "image": "assets/cases/sample-counselor-wordpress.jpg"
   },
   {
-    "case_type": "自主制作・サンプル",
-    "category": "店舗 / カフェ",
-    "description": "静的サイト生成CMSを用いて作成した、架空の自家焙煎カフェ「ゆきあい」のサイト。メニュー、豆と焙煎、店について、アクセスの5ページに情報を整理し、暗褐色の画面、縦組みタイポグラフィ、人物中心の写真で店の空気を設計した。トップのCanvasでは熾火の呼吸と、色を失いながら立ちのぼる火の粉を描き、焙煎にかかる熱と時間を静かな動きとして表現している。ブログ・予約・EC・問い合わせフォームは含まない。実在の店舗・人物・所在地とは無関係。",
-    "highlights": [
-      "5ページ構成（トップ、メニュー、豆と焙煎、店について、アクセス）",
-      "暗褐色×琥珀の点光源、明朝体、縦組みによるカフェ固有のデザイン",
-      "Canvas「火床」— 熾火の呼吸と立ちのぼる火の粉",
-      "prefers-reduced-motion 対応、画面外・非表示タブでのアニメーション停止",
-      "Markdown原稿をCMSから静的HTMLへ生成する軽量構成"
-    ],
     "id": "site-cafe",
-    "purpose": "小規模店舗サイトで、業種に合った情報設計とアートディレクション、Canvasによる固有のモーションをどう組み合わせるかの制作例。",
-    "summary": "暗い焙煎小屋の空気と、毎朝少量ずつ豆を焼く時間を表現した、架空の自家焙煎カフェの5ページサイト。",
-    "target_users": "地域の来店前に店の雰囲気やメニューを確認したい来店客（架空ブランドの想定読者）",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SQLite",
-      "CSS"
-    ],
     "title": "自家焙煎珈琲 ゆきあい",
-    "type": "サンプルサイト",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://site-cafe.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/site-cafe/1.jpg"
-    ]
+    "category": "店舗 / カフェ",
+    "summary": "暗い焙煎小屋の空気と、毎朝少量ずつ豆を焼く時間を表現した、架空の自家焙煎カフェの5ページサイト。",
+    "repository": "https://github.com/ak2lab/site-cafe",
+    "image": "assets/cases/site-cafe.jpg"
   },
   {
-    "case_type": "自主制作・サンプル",
-    "category": "店舗 / 整体",
-    "description": "架空の整体室「まどろぎ」のサイト（制作基盤は静的サイト生成CMS）。料金、初回の流れ、室内と担当者、予約・アクセスの各固定ページに整理した。加えて「まどろぎ便り」として記事投稿に対応し、カテゴリ・タグ・年月別一覧・全文検索から記事を辿れる。デスクトップでは屋号・料金・予約情報を常時確認できる固定サイドバーを採用した。FVは4枚の場面写真を全面に敷き、半透明の紙面を重ねたスライドショー。Canvas「呼吸の時計」が張り5秒・ゆるみ8秒の周期で紙面の罫・光の呼吸・弛み罫を駆動する。料金・締め・フッターは深い青緑鼠の深色面で区切る。予約システム・会員機能・問い合わせフォームは含まない。",
-    "highlights": [
-      "デスクトップ固定サイドバーで料金・予約情報を常時表示",
-      "FV=4枚スライドショー×半透明紙面×級数対比キャッチ",
-      "Canvas「呼吸の時計」— 張り5秒・ゆるみ8秒の弛み罫・光の呼吸",
-      "深色面（料金・締め・フッター）と「わずかに弛んだ罫線」モチーフ",
-      "「まどろぎ便り」— 記事投稿、カテゴリ・タグ・年月・全文検索",
-      "Markdown原稿をCMSから静的HTMLへ生成"
-    ],
     "id": "site-seitai",
-    "purpose": "整体・サロン系で求められる「料金と予約方法の即時確認」を軸に、業種の規制（効果保証の回避等）を踏まえた表現と、固定サイドバーというレイアウトの型を試した一件。",
-    "summary": "固定サイドバーで料金と予約を常時見せ、FVスライドショーと弛み罫モチーフ、ブログ「まどろぎ便り」を備えた、架空の整体室サイト。",
-    "target_users": "施術前に料金・流れ・予約方法をスマートフォンで確認したい来店客（架空ブランドの想定読者）",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SQLite",
-      "CSS"
-    ],
     "title": "整体室 まどろぎ",
-    "type": "サンプルサイト",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://site-seitai.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/site-seitai/1.jpg"
-    ]
+    "category": "店舗 / 整体",
+    "summary": "固定サイドバーで料金と予約を常時見せ、FVスライドショーと弛み罫モチーフ、ブログ「まどろぎ便り」を備えた、架空の整体室サイト。",
+    "repository": "https://github.com/ak2lab/site-seitai",
+    "image": "assets/cases/site-seitai.jpg"
   },
   {
-    "case_type": "自主制作・サンプル",
-    "category": "士業 / 税理士事務所",
-    "description": "架空の税理士事務所「常盤野税理士事務所」のサイト（制作基盤は静的サイト生成CMS）。初めての方へ、業務内容、記帳代行・月次顧問、決算・確定申告、開業支援、料金、事務所案内、FAQ、お問い合わせの10固定ページに整理。読みもの「経営と数字のノート」で記事投稿、カテゴリ・タグ・年月アーカイブ・RSS・全文検索に対応する。左ラベルと右本文の帳簿型グリッド、等幅数字、真鍮の二重罫をサイト全体の署名とした。白・紙色・墨緑の3層章リズム。FVは相談写真の断ち落とし×白い紙面×等幅大数字帯。Canvas「試算表への整列」は墨緑章に額装し、散らばった数字が帳簿の桁へ収束して合計行が二重罫で確定する。料金シミュレーター・問い合わせフォームは含まない。",
-    "highlights": [
-      "左ラベル｜右本文の帳簿型グリッド（桁の罫）",
-      "白・紙色・墨緑の3層章リズムと「二重罫」署名",
-      "Canvas「試算表への整列」— 墨緑章に額装した試算表紙面（合計は明細の実総和）",
-      "FV=相談写真の断ち落とし×紙面重なり×等幅大数字帯",
-      "「経営と数字のノート」— 記事投稿、カテゴリ・タグ・年月・RSS・全文検索",
-      "Markdown原稿をCMSから静的HTMLへ生成"
-    ],
     "id": "site-kaikei",
-    "purpose": "士業サイトに必要な「対応範囲の明示」「料金の明快さ」「信頼感のある資料型レイアウト」を課題に、帳簿型グリッドと「二重罫」という型で構成した。",
-    "summary": "固定10ページとブログ「経営と数字のノート」を、帳簿型グリッドと「二重罫」署名、試算表Canvasで組んだ、架空の税理士事務所サイト。",
-    "target_users": "業務範囲と料金を確認したい個人事業主・小規模法人（架空事務所の想定読者）",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SQLite",
-      "CSS"
-    ],
     "title": "常盤野税理士事務所",
-    "type": "サンプルサイト",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://site-kaikei.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/site-kaikei/1.jpg"
-    ]
+    "category": "士業 / 税理士事務所",
+    "summary": "固定10ページとブログ「経営と数字のノート」を、帳簿型グリッドと「二重罫」署名、試算表Canvasで組んだ、架空の税理士事務所サイト。",
+    "repository": "https://github.com/ak2lab/site-kaikei",
+    "image": "assets/cases/site-kaikei.jpg"
   },
   {
-    "case_type": "自主制作・サンプル",
-    "category": "福祉 / 就労継続支援",
-    "description": "架空の就労継続支援B型事業所「常盤野あさなぎ工房」のサイト。静的サイト生成CMSで制作し、工房について、仕事と自主製品、ご利用の流れ、重要事項、記事を探すの各固定ページに整理した。「工房だより」で記事投稿、カテゴリ・タグ・年月・全文検索に対応する。利用希望者、家族、支援機関、製品購入者、作業発注者がそれぞれの入口へ進めるよう情報を分岐させた。FVは全景写真の下に織りかけの布を敷き、5枚の布がそれぞれ異なるテンポで織り進むCanvas表現で「はたらく速さは、ひとそれぞれ」を見せる。生成り地×墨×苔緑に絞った工房ブランド。EC・予約システムは含まない。",
-    "highlights": [
-      "利用相談・製品購入・作業発注の3入口を整理",
-      "FV=全景写真×織りかけの布（版面内に写真と図を揃える構図）",
-      "Canvas「それぞれの速さで進む布」— 5枚の布が異なるテンポで織り進む",
-      "生成り地×墨×苔緑に絞った工房ブランドと media-row 交互配置",
-      "「工房だより」— 記事投稿、カテゴリ・タグ・年月・全文検索",
-      "Markdown原稿をCMSから静的HTMLへ生成"
-    ],
     "id": "site-sagyosho",
-    "purpose": "読み手が複数いる福祉事業所サイトの入口整理と、B型事業所向けの表現配慮（法人格表記、工賃の書き方等）に取り組んだ一件。",
-    "summary": "利用・製品購入・作業発注の3入口とブログ「工房だより」を、織り場モチーフと個人差の速さを描くCanvasで組んだ、架空の就労継続支援B型事業所サイト。",
-    "target_users": "利用を検討する本人・家族・支援機関、自主製品の購入者、軽作業の発注者（架空工房の想定読者）",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SQLite",
-      "CSS"
-    ],
     "title": "常盤野あさなぎ工房",
-    "type": "サンプルサイト",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://site-sagyosho.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/site-sagyosho/1.jpg"
-    ]
+    "category": "福祉 / 就労継続支援",
+    "summary": "利用・製品購入・作業発注の3入口とブログ「工房だより」を、織り場モチーフと個人差の速さを描くCanvasで組んだ、架空の就労継続支援B型事業所サイト。",
+    "repository": "https://github.com/ak2lab/site-sagyosho",
+    "image": "assets/cases/site-sagyosho.jpg"
   },
   {
-    "case_type": "自主制作・サンプル",
-    "category": "福祉 / 放課後等デイサービス",
-    "description": "架空の放課後等デイサービス「ぐるりの木 柊野教室」のサイト。教室について、放課後の一日、ご利用案内、自己評価結果の公表の各固定ページに整理。加えて「教室だより」で記事投稿、カテゴリ・タグ・年月・全文検索・RSSに対応している。保護者が預けている時間の過ごし方を具体的に確認できる構成にした。子どもの顔は写さず、スタッフの顔あり写真と後ろ姿・手元中心の場面写真を使っている。トップでは橙の色面の上に、斜光・葉影・光の中の塵がゆっくり移ろうCanvas表現を重ねている。",
-    "highlights": [
-      "一日の流れ・利用手順・送迎・費用の考え方を整理",
-      "橙の色面を全面に敷き、白は読み物の面だけに限ったデザイン",
-      "子どもの顔を写さない写真構成（後ろ姿・手元・横顔の一部まで）",
-      "Canvas「窓の光と葉影」— 90秒周期の斜光と葉影の揺れ",
-      "「教室だより」— 記事投稿、カテゴリ・タグ・年月・全文検索・RSS",
-      "Markdown原稿をCMSから静的HTMLへ生成"
-    ],
     "id": "site-houkago",
-    "purpose": "子どもの顔を写さない・効果保証や医療語を使わない・金額表を置かないという表現規制の下で、保護者向けの情報設計と明るい色面のデザインをどう両立させるかを課題にした。",
-    "summary": "保護者が放課後の過ごし方を具体的に想像できる情報とブログ「教室だより」、夕方の光が移ろうCanvas表現を組み合わせた、架空の放課後等デイサービスサイト。",
-    "target_users": "放課後の居場所を探す子どもの保護者、支援関係者（架空教室の想定読者）",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SQLite",
-      "CSS"
-    ],
     "title": "ぐるりの木 柊野教室",
-    "type": "サンプルサイト",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://site-houkago.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/site-houkago/1.jpg"
-    ]
+    "category": "福祉 / 放課後等デイサービス",
+    "summary": "保護者が放課後の過ごし方を具体的に想像できる情報とブログ「教室だより」、夕方の光が移ろうCanvas表現を組み合わせた、架空の放課後等デイサービスサイト。",
+    "repository": "https://github.com/ak2lab/site-houkago",
+    "image": "assets/cases/site-houkago.jpg"
   },
   {
-    "case_type": "自主制作・サンプル",
-    "category": "スポーツ / 社会人クラブ",
-    "description": "静的サイト生成CMSを用いて作成した、架空の社会人バスケットボールクラブ「常盤野リムズ」のサイト。クラブについて、練習日程、入会・見学、活動ギャラリーを5ページに整理。日付入り報告・戦績・動的カレンダーは置かず、公開後ほぼ更新しなくても成立する内容のみで構成した。FVは観客入り大会の試合写真を全面ヒーローに使い、ヘッダーは透明→スクロールで黒地固定。本文帯のCanvasでは、ボールが跳ねるたびに高さと速度を失い、転がり、摩擦で停止したあと再び動き出すまでを物理的に描いている。",
-    "highlights": [
-      "5ページ構成。日付・戦績・動的カレンダーなし（更新不要で成立）",
-      "FV=観客入り大会写真の全面ヒーロー。ヘッダーはFV上透明→スクロール固定",
-      "Canvas「もう一度動き出すドリブル」— 減衰→転がり→摩擦で静止→再始動",
-      "競技写真5点（試合・守備・受け手・待機）で視線と身体の向きを一つのプレーに",
-      "Markdown原稿をCMSから静的HTMLへ生成"
-    ],
     "id": "site-sports",
-    "purpose": "地域スポーツクラブ向けに、入会前に確認したい情報（曜日・費用・雰囲気）を短時間で伝えること、当番制の担当者交代があっても更新不要で成立する内容にすることの2点を課題にした。",
-    "summary": "見学・入会に必要な曜日、費用、雰囲気を短時間で確認でき、減衰と再始動を描くドリブルCanvasを備えた、架空の社会人バスケクラブサイト。",
-    "target_users": "参加できる曜日、費用、雰囲気を確認したい18歳以上の入会希望者（架空クラブの想定読者）",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SQLite",
-      "CSS"
-    ],
     "title": "常盤野リムズ",
-    "type": "サンプルサイト",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://site-sports.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/site-sports/1.jpg"
-    ]
+    "category": "スポーツ / 社会人クラブ",
+    "summary": "見学・入会に必要な曜日、費用、雰囲気を短時間で確認でき、減衰と再始動を描くドリブルCanvasを備えた、架空の社会人バスケクラブサイト。",
+    "repository": "https://github.com/ak2lab/site-sports",
+    "image": "assets/cases/site-sports.jpg"
   },
   {
-    "case_type": "自主制作・実用",
-    "category": "開発者ツール / 業務支援",
-    "description": "PHP単体で動くリンク管理ツール。DBを使わずCSVに保存し、カテゴリ階層、検索、タグ、評価、お気に入り、ドラッグ&ドロップでの並び替え、カテゴリ移動、バックアップ世代管理、Undo/Redo、URLタイトル自動取得、ブックマークレットからの追加に対応。認証・ログインは置かない単一ユーザー向けの軽量ツール。",
-    "highlights": [
-      "DBなしのCSV保存型",
-      "カテゴリ階層、タグ、評価、お気に入り、検索",
-      "ドラッグ&ドロップによる並び替えとカテゴリ移動",
-      "バックアップ世代管理とUndo/Redo",
-      "ブックマークレットからのリンク追加"
-    ],
     "id": "linker",
-    "purpose": "よく使うリンクや資料を、DBなしで設置できるPHPツールとして管理するため。小規模実用ツールの設計・実装の参考として制作。",
-    "summary": "カテゴリ・タグ・評価でリンクを整理できる、CSV保存型のブックマーク管理ツール。",
-    "target_users": "個人、制作者、開発者",
-    "tech_stack": [
-      "PHP",
-      "CSV",
-      "JavaScript",
-      "Fetch API",
-      "HTML Drag and Drop API",
-      "localStorage",
-      "Bookmarklet",
-      "CSS"
-    ],
     "title": "ブックマーク管理",
-    "type": "PHP Webツール",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://tools.ak2lab.com/linker/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/linker/1.jpg"
-    ]
+    "category": "開発者ツール / 業務支援",
+    "summary": "カテゴリ・タグ・評価でリンクを整理できる、CSV保存型のブックマーク管理ツール。",
+    "repository": "https://github.com/ak2lab/linker",
+    "image": "assets/cases/linker.jpg"
   },
   {
-    "case_type": "自主制作・実用",
-    "category": "Electron / Windowsアプリ",
-    "description": "PHP版Linkerと同じCSV形式を引き継ぎ、ElectronでWindowsデスクトップアプリとして動かせるようにしたもの。通常版はAppData、portable版はアプリ内のdataフォルダへ保存し、任意の保存先への変更と保存先フォルダを開く操作にも対応している。データ操作はIPC経由で行い、contextIsolationを有効にしたpreloadから必要なAPIだけを公開。electron-builderでNSISインストーラー版とportableフォルダ版を生成できる。",
-    "highlights": [
-      "PHP版Linkerと互換性のあるCSVデータ形式",
-      "通常版のAppData保存とportable版のdataフォルダ保存",
-      "アプリ内からの保存先変更と保存先フォルダを開く操作",
-      "Electron IPCによるレンダラーとメインプロセスの分離",
-      "contextIsolation有効・nodeIntegration無効のpreload API構成",
-      "NSISインストーラー版とフォルダ持ち運び版を生成",
-      "Undo/Redo、バックアップ、検索、タグ、評価などWeb版の主要機能を継承"
-    ],
     "id": "linker-desktop",
-    "purpose": "Web版LinkerのCSVデータと主要機能を引き継ぎながら、インストール型・持ち運び型のWindowsアプリとして利用できるようにするため。ローカル保存と配布形式を含めてElectron向けに組み直した。",
-    "summary": "CSV保存型リンク管理ツール「Linker」を、ElectronでWindowsデスクトップアプリ化した派生版。",
-    "target_users": "個人でリンクを整理し、ローカル環境にデータを保存したい利用者",
-    "tech_stack": [
-      "Electron",
-      "Node.js",
-      "JavaScript",
-      "CSV",
-      "Electron IPC",
-      "contextBridge",
-      "electron-builder",
-      "NSIS",
-      "localStorage",
-      "HTML Drag and Drop API",
-      "CSS"
-    ],
     "title": "ブックマーク管理Desktopアプリ",
-    "type": "Windowsデスクトップアプリ",
-    "links": [],
-    "screenshots": []
+    "category": "Electron / Windowsアプリ",
+    "summary": "CSV保存型リンク管理ツール「Linker」を、ElectronでWindowsデスクトップアプリ化した派生版。",
+    "repository": "https://github.com/ak2lab/linker-desktop",
+    "image": ""
   },
   {
-    "case_type": "自主制作・研究開発",
-    "category": "ブラウザゲーム / UI実験",
-    "description": "HTML5 CanvasとJavaScriptだけで実装したブラウザ版テトリス。壁キック付き回転、3段階の設置猶予、レベル上昇、スコア計算、ネクストピース、効果音、ポーズに加え、キー割り当てのカスタマイズ（localStorage保存）と名前つきハイスコア（上位10件）を備える。F3による画面サイズ切替、URLパラメータによる開始レベル指定にも対応。業務アプリとは別系統の、Canvas描画・ゲームループ・状態管理の実装例。",
-    "highlights": [
-      "Canvas単体。外部ライブラリ不使用",
-      "壁キック付き回転と3段階の設置猶予",
-      "キー割り当てカスタマイズ（複数キー・重複防止・localStorage）",
-      "名前つきハイスコア（上位10件）",
-      "ライン消去フラッシュ・レベルアップトースト等の控えめな演出"
-    ],
     "id": "browser-tetris",
-    "purpose": "業務アプリとは別に、Canvas描画、ゲームループ、キー入力、当たり判定、状態管理、操作感調整、localStorage による設定・記録の永続化を扱ったインタラクション作品として制作。",
-    "summary": "SEGAアーケード版の操作感を意識した、HTML5 Canvasだけで動くブラウザ版テトリス。キー設定とハイスコアに対応。",
-    "target_users": "ブラウザで手軽に遊びたいユーザー、Canvasやゲームの状態管理・設定カスタマイズの実装を確認したい人",
-    "tech_stack": [
-      "JavaScript",
-      "Canvas API",
-      "localStorage",
-      "Keyboard Events",
-      "HTMLAudioElement",
-      "URLSearchParams",
-      "requestAnimationFrame",
-      "CSS"
-    ],
     "title": "ブラウザ版テトリス",
-    "type": "ブラウザアプリ / ゲーム",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://game.ak2lab.com/tetris/"
-      },
-      {
-        "type": "repository",
-        "label": "GitHubリポジトリ",
-        "url": "https://github.com/ak2lab/tetris"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/browser-tetris/1.jpg"
-    ]
+    "category": "ブラウザゲーム / UI実験",
+    "summary": "SEGAアーケード版の操作感を意識した、HTML5 Canvasだけで動くブラウザ版テトリス。キー設定とハイスコアに対応。",
+    "repository": "https://github.com/ak2lab/tetris",
+    "image": "assets/cases/browser-tetris.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "メッセージング / コミュニケーション",
-    "description": "Next.js App Router + TypeScript + Prisma + Socket.IO で構築。SNS全機能ではなく会話体験に集中し、1対1トークとグループチャット（トークルーム）の送受信、既読・リアクション・リプライ・送信取消・添付ファイルを実装。友だち申請・ブロック、公開プロフィール URL・QR 共有、メンバー検索など DM 開始導線も備える。リアルタイムは Socket.IO を Next.js 起動プロセス内で自動起動。認証はユーザー ID / パスワード（セッション Cookie）のみ。DB は SQLite（MySQL 切替用の Prisma スキーマも用意）。公開デモには試用アカウントとサンプル会話データを同梱。",
-    "highlights": [
-      "1対1トークとグループチャット（作成・招待・メンバー管理・既読人数）",
-      "Socket.IO によるリアルタイム受信（Next.js 同一プロセス内で自動起動）",
-      "リプライ、リアクション、送信取消、添付ファイル（画像プレビュー）",
-      "友だち申請・ブロック、公開プロフィール URL・QR 共有",
-      "2カラム（PC）／1画面1役割（スマホ）のレスポンシブ UI"
-    ],
     "id": "dm",
-    "purpose": "SNS 全機能ではなく会話体験に集中したメッセージアプリとして設計・実装。日常で LINE を使う人が迷わず操作できることを最低ラインにしつつ、リアルタイム通信とページ間の統一感を優先した。",
-    "summary": "1対1とグループチャットに対応した、Socket.IO によるリアルタイム通信のメッセージアプリ。",
-    "target_users": "個人間のやり取りをブラウザで行いたい利用者",
-    "tech_stack": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Prisma",
-      "Node.js",
-      "CSS",
-      "SQLite",
-      "MySQL",
-      "Zod",
-      "Socket.IO",
-      "sharp",
-      "qrcode",
-      "Nginx",
-      "PM2"
-    ],
     "title": "メッセージアプリ",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://chat.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/dm/1.jpg"
-    ]
+    "category": "メッセージング / コミュニケーション",
+    "summary": "1対1とグループチャットに対応した、Socket.IO によるリアルタイム通信のメッセージアプリ。",
+    "repository": "https://github.com/ak2lab/dm",
+    "image": "assets/cases/dm.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "店舗運営 / 予約管理",
-    "description": "PHP 8.4（フレームワーク不使用）で構築。デモは架空の美容室「Salon Lumière」。顧客側は店舗紹介トップと4ステップのWEB予約（メニュー→スタッフ→日時○×→情報入力・確認・確定）。管理側はダッシュボード、週間カレンダー（スタッフ別色分け・レーン分割）、予約一覧、顧客・メニュー/スタッフ管理を備える。空き枠は営業時間・施術時間・既存予約から30分刻みで計算し、指名なし時は空きスタッフへ自動割当。確定直前の再チェックで二重予約を防止。メール通知は未実装。ローカルは SQLite、本番は MySQL に切替可能。",
-    "highlights": [
-      "4ステップのWEB予約と30分刻みの○×空き表示",
-      "指名なし予約の自動スタッフ割当と確定直前の空き枠再チェック",
-      "週間カレンダー（スタッフ別色分け・重複予約のレーン分割）",
-      "管理ダッシュボードと顧客・メニュー/スタッフ管理",
-      "業種設定を config/app.php と seed に集約した横展開設計"
-    ],
     "id": "reservation",
-    "purpose": "小規模店舗・教室向けの予約受付と店舗運営を、フレームワークに依存せず軽量に実装するため。業種依存の設定を config と seed に集約し、美容室以外への横展開をしやすい構成にした。",
-    "summary": "WEB予約と店舗管理を一体化した予約管理システム。美容室・整体・教室などへの横展開を想定。",
-    "target_users": "美容室・整体院・教室などの店舗運営者",
-    "tech_stack": [
-      "PHP",
-      "SQLite",
-      "MySQL",
-      "PDO",
-      "CSS"
-    ],
     "title": "予約管理システム",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://reservation.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/reservation/1.jpg"
-    ]
+    "category": "店舗運営 / 予約管理",
+    "summary": "WEB予約と店舗管理を一体化した予約管理システム。美容室・整体・教室などへの横展開を想定。",
+    "repository": "https://github.com/ak2lab/reservation",
+    "image": "assets/cases/reservation.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "イベント運営 / 申込受付",
-    "description": "PHP 8.4（フレームワーク不使用）で構築。デモ施設はイベントスペース「Lantern Hall」。参加者側はトップLP、イベント詳細（残席メーター）、3ステップ申込（入力→確認→受付番号発行）。管理側はKPIダッシュボード、イベントCRUD、申込者管理（キャンセル/復帰・CSVダウンロード）。定員超過防止のためトランザクション内で残席を再チェックし、同一イベント×同一メールの重複申込も防止。予約管理システム（reservation）と部品を共通化。メール通知は未実装。",
-    "highlights": [
-      "残席メーターと受付状態表示（受付中/残りわずか/満席/終了/中止）",
-      "トランザクション内の残席再チェックと重複申込防止",
-      "管理ダッシュボードとイベントCRUD（公開/下書き/中止）",
-      "申込者CSVダウンロード（BOM付きUTF-8）",
-      "予約管理システムとの部品共通化"
-    ],
     "id": "events",
-    "purpose": "セミナー・ワークショップ・交流会などのイベント受付と定員管理を、軽量なPHP構成で実装するため。申込データのCSV出力まで含めた受付基盤として制作。",
-    "summary": "定員管理・申込者CSV出力を備えた、イベント・セミナーの公開サイトと受付管理システム。",
-    "target_users": "イベントスペース運営者、セミナー主催者",
-    "tech_stack": [
-      "PHP",
-      "SQLite",
-      "MySQL",
-      "PDO",
-      "CSV",
-      "CSS"
-    ],
     "title": "イベント・セミナー受付管理",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://events.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/events/1.webp"
-    ]
+    "category": "イベント運営 / 申込受付",
+    "summary": "定員管理・申込者CSV出力を備えた、イベント・セミナーの公開サイトと受付管理システム。",
+    "repository": "https://github.com/ak2lab/events",
+    "image": "assets/cases/events.webp"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "会計・帳票 / 業務支援",
-    "description": "PHP 8.4（フレームワーク不使用）で構築。ダッシュボードではKPI 4種と直近6ヶ月の請求推移グラフ（SVG）を表示。見積書は明細行つきCRUDとステータス管理、ワンクリックで請求書へ変換。請求書は入金管理と支払期限超過の自動判定、A4印刷用帳票（ブラウザ印刷でPDF保存可）でインボイス対応（登録番号・税率区分別消費税・軽減税率※印）。取引先管理・自社情報設定・CSVエクスポートにも対応。初回アクセス時に自動マイグレーションとデモデータ投入。ログインは不要（デモ用途）。",
-    "highlights": [
-      "見積書の明細行つきCRUDと見積→請求のワンクリック変換",
-      "A4印刷用帳票（インボイス対応・税率区分別消費税）",
-      "入金管理と支払期限超過の自動判定",
-      "ダッシュボードKPIとSVG棒グラフ",
-      "Vanilla JS による明細エディタ（行追加・金額自動計算）"
-    ],
     "id": "billing",
-    "purpose": "フリーランス・小規模事業者向けの見積・請求業務を、依存ライブラリなしのPHPで実装するため。インボイス制度対応の帳票出力と、見積から請求への変換フローを含めた実務向けツールとして制作。",
-    "summary": "インボイス制度に対応した見積書・請求書の発行と入金管理ができる帳票管理システム。",
-    "target_users": "見積・請求・入金を管理したいフリーランス、小規模事業者",
-    "tech_stack": [
-      "PHP",
-      "SQLite",
-      "PDO",
-      "JavaScript",
-      "SVG",
-      "CSV",
-      "CSS"
-    ],
     "title": "見積・請求管理",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://billing.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/billing/1.png"
-    ]
+    "category": "会計・帳票 / 業務支援",
+    "summary": "インボイス制度に対応した見積書・請求書の発行と入金管理ができる帳票管理システム。",
+    "repository": "https://github.com/ak2lab/billing",
+    "image": "assets/cases/billing.png"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "フォーム作成 / 業務支援",
-    "description": "Next.js App Router + TypeScript + Prisma で構築。架空ブランド「フォームメイト」を想定。dnd-kit によるドラッグ&ドロップのフォームビルダー（項目10種・条件分岐・テーマカラー6色）、公開フォーム（ログイン不要）、回答管理ダッシュボード（統計・集計グラフ・CSVエクスポート）を実装。フォーム定義・回答はJSON文字列としてDBに保存。SQLite（開発）/MySQL（本番）を切替可能。",
-    "highlights": [
-      "dnd-kit による3ペインフォームビルダー（項目10種・条件分岐）",
-      "条件分岐の循環参照ガード（循環しても無限ループしない）とZodによるサーバー/クライアント両方の回答検証",
-      "公開フォーム（ログイン不要）とテーマカラー6色",
-      "回答管理ダッシュボード（集計グラフ・CSVエクスポート）",
-      "HMAC署名Cookieによる管理者セッション認証"
-    ],
     "id": "formbuilder",
-    "purpose": "フォームを作る側（ビルダー）と使う側（公開フォーム・回答管理）を1本のアプリで扱える構成を検証するため。条件分岐と入力検証を含めたフォームSaaSの基本域を実装した。",
-    "summary": "ドラッグ&ドロップでフォームを作成し、回答を集計できるフォーム作成・回答管理システム。",
-    "target_users": "問い合わせ・申込・アンケートフォームを自作したい小規模事業者",
-    "tech_stack": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Prisma",
-      "Node.js",
-      "Tailwind CSS",
-      "SQLite",
-      "MySQL",
-      "Zod",
-      "dnd-kit",
-      "CSV"
-    ],
     "title": "フォームビルダー",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://formbuilder.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/formbuilder/1.jpg"
-    ]
+    "category": "フォーム作成 / 業務支援",
+    "summary": "ドラッグ&ドロップでフォームを作成し、回答を集計できるフォーム作成・回答管理システム。",
+    "repository": "https://github.com/ak2lab/formbuilder",
+    "image": "assets/cases/formbuilder.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "EC / 通販サイト",
-    "description": "Next.js App Router + TypeScript + Prisma で構築。架空ブランド「パレットマーケット」としてフォント・テクスチャ等のデジタル素材を販売する体裁。商品一覧（カテゴリ・価格帯・SALE絞り込み、URLクエリ同期）、商品詳細（SSG/ISR）、カート（Context + localStorage）、購入フロー（Zod検証→モック決済→注文完了）を実装。管理画面は商品CRUD、注文管理、売上ダッシュボード、CSVエクスポート。決済は fakeCheckout() による完全モックで実売上は発生しない。商品画像は写真素材を使わず、商品ごとにSVGを自動生成して配置している（商品登録・更新時に書き出し）。",
-    "highlights": [
-      "商品一覧の絞り込み（URLクエリ同期）と商品詳細のSSG/ISR",
-      "カート（React Context + localStorage）とZod検証付き購入フロー",
-      "決済は完全モック（fakeCheckout。実売上・カード情報保存なし）",
-      "管理画面の商品CRUD・注文管理・売上ダッシュボード",
-      "商品画像は商品ごとにSVGを自動生成（写真素材なし）"
-    ],
     "id": "shop",
-    "purpose": "ECサイトに必要な「一覧→詳細→カート→購入→注文管理」の一連の流れを1本で実装するため。決済連携は意図的にモックのままとし、デモであることを購入フロー上でも明示している。",
-    "summary": "デジタル素材を扱うECサイトのデモ。購入フローまで実装し、決済はモック。",
-    "target_users": "デジタル素材ショップの運営者",
-    "tech_stack": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Prisma",
-      "Node.js",
-      "Tailwind CSS",
-      "SQLite",
-      "Zod",
-      "SVG",
-      "CSV",
-      "localStorage"
-    ],
     "title": "ECサイト",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://shop.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/shop/1.jpg"
-    ]
+    "category": "EC / 通販サイト",
+    "summary": "デジタル素材を扱うECサイトのデモ。購入フローまで実装し、決済はモック。",
+    "repository": "https://github.com/ak2lab/shop",
+    "image": "assets/cases/shop.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "カスタマーサポート / 問い合わせ管理",
-    "description": "Next.js App Router + TypeScript + Prisma で構築。架空のWeb制作会社「つむぎWEB」を想定。公開問い合わせフォーム（受付番号自動発行）、受付状況確認ページ、管理画面（チケット一覧・会話スレッド・内部メモ・ステータス/担当者/優先度変更・操作履歴）を実装。ダッシュボードは未対応件数・解決率・平均初回応答時間等を実データから集計。AI返信下書き補助は作品機能として組み込み、公開デモは外部APIを使わないデモモードで動く。",
-    "highlights": [
-      "公開問い合わせフォームと受付番号（T-xxxxxx）の自動発行",
-      "チケット管理（会話スレッド・内部メモ・操作履歴）",
-      "ダッシュボード（未対応件数・解決率・平均初回応答時間・7日受信数グラフ）",
-      "AI返信下書き補助（既定=テンプレート分岐で課金ゼロ、liveモード=Anthropic API）",
-      "ルールベースのタグ候補提案と定型文管理"
-    ],
     "id": "helpdesk",
-    "purpose": "問い合わせ受付からチケット化、対応、解決までの業務フローを1本で実装するため。AI補助は作品機能として組み込み、公開デモではAPI課金のないデモモードを既定とした。",
-    "summary": "問い合わせ受付からチケット対応までを扱うヘルプデスク。AI返信下書き補助を組み込む。",
-    "target_users": "問い合わせ対応業務を行う小規模事業者",
-    "tech_stack": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Prisma",
-      "Node.js",
-      "Tailwind CSS",
-      "SQLite",
-      "Zod",
-      "Anthropic API"
-    ],
     "title": "ヘルプデスクシステム",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://helpdesk.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/helpdesk/1.jpg"
-    ]
+    "category": "カスタマーサポート / 問い合わせ管理",
+    "summary": "問い合わせ受付からチケット対応までを扱うヘルプデスク。AI返信下書き補助を組み込む。",
+    "repository": "https://github.com/ak2lab/helpdesk",
+    "image": "assets/cases/helpdesk.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "SNS / マイクロブログ",
-    "description": "Next.js App Router + TypeScript + Prismaで構築したマイクロブログSNSのデモ「ひとこと（Hitokoto）」。140字の短文投稿（画像は任意）、「発見」「フォロー中」を切り替えられるcursorベースの無限スクロール、いいね・コメント、フォロー、プロフィール、通知、ハンドル・表示名検索を実装している。認証はscryptによるパスワードハッシュとDBセッション（httpOnly Cookie）の自前実装で、投稿・コメントの削除時には所有者を確認する。CoCoLinkやメッセージアプリとは役割を分け、機能を絞った構成にしている。",
-    "highlights": [
-      "140字の短文投稿（任意画像をsharpでリサイズ・WebP化）",
-      "「発見」「フォロー中」の切り替えとcursorベースの無限スクロール",
-      "いいね・コメントの楽観的UI更新",
-      "フォロー/フォロー解除とおすすめユーザー表示",
-      "プロフィールページ（/@handle）とプロフィール編集",
-      "通知の未読バッジと自動既読化",
-      "ハンドル・表示名による検索",
-      "scrypt + DBセッションによる認証と、削除時の所有者確認",
-      "SQLiteで実装し、MySQL/MariaDBへの移行を想定した接続分岐を用意"
-    ],
     "id": "sns",
-    "purpose": "投稿・タイムライン・フォロー・通知など、マイクロブログの基本的な流れを一通り動かせる小規模なデモとして制作。多機能SNSのCoCoLinkやチャット中心のメッセージアプリとは役割を分けている。",
-    "summary": "140字の短文投稿を中心に、フォロー・通知・検索を備えた小規模なマイクロブログ型SNS。",
-    "target_users": "短文を中心に気軽に投稿・交流したい利用者",
-    "tech_stack": [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Prisma",
-      "Node.js",
-      "Tailwind CSS",
-      "SQLite",
-      "Zod",
-      "sharp"
-    ],
     "title": "マイクロブログSNS",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://sns.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/sns/1.jpg"
-    ]
+    "category": "SNS / マイクロブログ",
+    "summary": "140字の短文投稿を中心に、フォロー・通知・検索を備えた小規模なマイクロブログ型SNS。",
+    "repository": "https://github.com/ak2lab/sns",
+    "image": "assets/cases/sns.jpg"
   },
   {
-    "case_type": "自主制作・実用",
-    "category": "CMS / 静的サイト",
-    "description": "PHP 8.4（フレームワーク不使用・Composer不使用）で構築した、Movable Type方式の静的サイト生成CMS。WordPressの代替を意識して設計している。記事の正本はフロントマター付きMarkdownファイルで、DBに本文を預けない。管理画面で編集後、「公開」操作でPublisherが固定ページ・投稿記事・階層カテゴリ別/タグ別/年月アーカイブ・新着一覧・sitemap.xml・検索インデックス・RSSを一括生成する。訪問者が見るのは事前生成された静的HTMLのみで、公開側はDBもプラグインも持たない。そのため表示はファイルを返すだけの速さで、脆弱性対応のためのバージョン追従に追われることもなく、サーバー引っ越しや他業者への引き継ぎも素のHTMLをそのまま渡せる。ページ数が増えても公開側の仕組みは変わらないため、規模を問わず同じ作りで運用できることを狙っている。投稿記事は複数階層カテゴリ・タグ・年月アーカイブ・全文検索に対応し、予約投稿（公開日を未来にすると指定日まで全公開物から除外され、予定日以降にローカルPCでビルドしてアップロードすると公開）も備える。毎日のブログ更新を想定し、管理画面から気軽に細かく編集できる。SQLiteは再構築可能な索引として使う。自作Markdownエンジンは先エスケープ→後整形の4段階パイプラインでXSSを防ぐ。日本語全文検索（uni/bi-gram）はビルド時に生成する。ローカルPCのPHPとSQLiteで編集・ビルドし、生成した静的ファイルをXServer等の共有サーバーへアップロードする構成。もう一つの設計の狙いは、AIエージェントでサイトを作るときの土台になること。テーマ階層やプラグインの作法を覚えさせる必要がなく、出力が素のHTMLとCSSなので、AI側の労力と表現の自由度をデザインそのものに向けられる。AK²Labのメインサイトや、Webサイト制作の事例の多くも、この方法で制作している。",
-    "highlights": [
-      "固定ページと投稿記事（複数階層カテゴリ・タグ・年月アーカイブ・全文検索）",
-      "予約投稿（指定日まで非公開。予定日以降にローカルPCでビルドしてアップロードすると公開）",
-      "Markdown原稿から「公開」操作での静的HTML一括生成",
-      "記事正本=Markdownファイル。公開側は静的HTMLのみでDBもプラグインも持たない",
-      "ファイルを返すだけの表示速度と、バージョン追従に追われない公開側",
-      "素のHTML出力による引っ越し・引き継ぎのしやすさ",
-      "テーマ階層やプラグインの作法がなく、AIエージェントでのデザイン制作と相性がよい",
-      "自作Markdownエンジン（4段階エスケープ）と日本語全文検索（uni/bi-gram）",
-      "CSRF・セッション固定化対策・ログイン試行ロック（5回/10分）"
-    ],
     "id": "cms",
-    "purpose": "WordPressに代わるWeb制作基盤として、Markdown管理と静的HTML生成を一体で扱えるCMSを実装するため。記事正本をファイルに置き、公開側から動く部分を無くす設計で、取り回しの良さと表示の速さ、引き継ぎのしやすさを核にしている。実用ツールとして、Webサイト制作事例の制作にも使用している。",
-    "summary": "Markdown原稿を管理画面で編集し、「公開」操作で静的HTMLを生成するCMS。WordPressに代わるWeb制作基盤として設計した。",
-    "target_users": "サイトを静的HTMLで運用したい制作者・事業者",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Markdown",
-      "SQLite",
-      "PDO",
-      "Fetch API",
-      "CSS"
-    ],
     "title": "静的サイト生成CMS",
-    "type": "自作CMS",
-    "links": [
-      {
-        "type": "production",
-        "label": "サイトを見る",
-        "url": "https://ak2lab.com/"
-      },
-      {
-        "type": "demo",
-        "label": "公開側デモを見る",
-        "url": "https://cms.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/cms/1.jpg",
-      "assets/cases/cms/2.png",
-      "assets/cases/cms/3.jpg"
-    ]
+    "category": "CMS / 静的サイト",
+    "summary": "Markdown原稿を管理画面で編集し、「公開」操作で静的HTMLを生成するCMS。WordPressに代わるWeb制作基盤として設計した。",
+    "repository": "https://github.com/ak2lab/cms",
+    "image": "assets/cases/cms.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "掲示板 / コミュニティ",
-    "description": "PHP 8.4（フレームワーク不使用）で構築した匿名掲示板。デモ名は「よろず掲示板」。板ごとのスレッド一覧（更新順／勢い順／新着順）、レス連番、`>>N` アンカーとホバーポップアップ、ID抽出、キーワード検索を実装。投稿は sage・1000レス上限・localStorage による名前/メール記憶に対応。荒らし対策として CSRF・ハニーポット・連投制限・NGワード（拒否／伏字）を備え、管理画面では KPI・あぼーん／復帰・スレッド停止/削除・板管理が可能。本文はエスケープ後にアンカー・URL整形する XSS 対策。公開デモは SQLite。",
-    "highlights": [
-      "板・スレッド・レスのスレッド型UI（勢い順・sage・>>N アンカー）",
-      "CSRF・ハニーポット・連投制限・NGワード（拒否／伏字）",
-      "エスケープ後の本文整形による XSS 対策",
-      "管理画面（KPI・あぼーん／復帰・スレッド停止/削除・板管理）",
-      "タイトル＋本文のキーワード検索"
-    ],
     "id": "bbs",
-    "purpose": "スレッド型テキストボードの作法（板・勢い・sage・>>N）を、現代的な可読性とセキュリティ対策込みで実装するため。匿名掲示板はXSSが致命的なため、エスケープ規約を厳密に設計した。",
-    "summary": "2ちゃんねる系のスレッド型・匿名テキストボード。板・スレ・レスと管理画面を備える。",
-    "target_users": "匿名掲示板を運営したいコミュニティ運営者",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "SQLite",
-      "MySQL",
-      "PDO",
-      "localStorage",
-      "CSS"
-    ],
     "title": "よろず掲示板",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://bbs.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/bbs/1.jpg"
-    ]
+    "category": "掲示板 / コミュニティ",
+    "summary": "2ちゃんねる系のスレッド型・匿名テキストボード。板・スレ・レスと管理画面を備える。",
+    "repository": "https://github.com/ak2lab/bbs",
+    "image": "assets/cases/bbs.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "不動産 / 検索エンジン",
-    "description": "PHP 8.4（フレームワーク不使用）で構築した物件検索サイト「スマイエ」。17ファセットでの多条件絞り込み、こだわり条件の AND/OR 切替、マッチ件数と各選択肢件数のリアルタイム追従、並び替え9種・ページネーションを実装。エンジンは entity・facet・option の抽象のみで動き、不動産の語彙は config/facets.php に隔離。JS 無効でも GET フォームで完全動作し、JS は fetch＋History API で無リロード追従。お気に入りは localStorage（ログインなし）。物件640件のデモデータ付き。",
-    "highlights": [
-      "17ファセットの多条件絞り込みと、こだわり条件の AND/OR 切替",
-      "disjunctive faceting による件数リアルタイム追従",
-      "プログレッシブ・エンハンスメント（JS無効でも GET で完全動作）",
-      "config/facets.php 差し替えで EC へ流用可能（examples/ec で実証）",
-      "SQL識別子はホワイトリスト、条件値は100% PDOプレースホルダ"
-    ],
     "id": "estate",
-    "purpose": "多条件ファセット検索を設定駆動で実装し、不動産以外（EC商品検索等）へ定義差し替えで流用できる構成にするため。examples/ec で別ドメインへの流用を実証している。",
-    "summary": "設定駆動の汎用ファセット検索エンジンを、不動産物件検索サイトとして実装したデモ。",
-    "target_users": "不動産・ECなど、多条件検索を必要とするサービス運営者",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "SQLite",
-      "MySQL",
-      "PDO",
-      "Fetch API",
-      "History API",
-      "localStorage",
-      "CSS"
-    ],
     "title": "不動産サイト",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://estate.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/estate/1.jpg"
-    ]
+    "category": "不動産 / 検索エンジン",
+    "summary": "設定駆動の汎用ファセット検索エンジンを、不動産物件検索サイトとして実装したデモ。",
+    "repository": "https://github.com/ak2lab/estate",
+    "image": "assets/cases/estate.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "用語集 / 検索",
-    "description": "PHP 8.4（フレームワーク不使用）で構築した用語集サイト。経済学・心理学を中心に730語程度を収録（公開デモ）。トップはJSパーティクルヒーローと、閲覧済みの用語を先頭へ繰り上げる五十音順の一覧。各用語詳細では双方向の関連ワード（正準1行の無向辺で片側削除＝両側消滅）と「最近見た用語」（localStorage・サーバ非保存）を表示。検索はカテゴリ・五十音索引・自作 uni/bi-gram 転置索引による全文検索の3方式。管理画面では用語・カテゴリの CRUD、Markdown 本文（生HTML禁止）。JS 無効でも閲覧・検索・索引が成立。",
-    "highlights": [
-      "カテゴリ・五十音索引・全文検索（自作 uni/bi-gram）の3方式",
-      "双方向関連ワード（無向辺1行・片側削除で両側消滅を構造保証）",
-      "閲覧履歴（localStorage）と、既読用語を先頭へ繰り上げるトップ一覧",
-      "生HTML禁止の Markdown レンダラ（escape-first）",
-      "プログレッシブ・エンハンスメント（JS無効でも閲覧・検索成立）"
-    ],
     "id": "words",
-    "purpose": "辞典サイトとしての閲覧体験と、双方向関連・自作全文検索・五十音索引を、Node不可の共有サーバー向け純PHPで実装するため。",
-    "summary": "経済学・心理学などの用語を、カテゴリ・五十音索引・全文検索の3方式で引ける辞典サイト。",
-    "target_users": "専門用語の公開・社内ナレッジ化を考えている事業者",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Markdown",
-      "Canvas API",
-      "SQLite",
-      "MySQL",
-      "PDO",
-      "Fetch API",
-      "localStorage",
-      "CSS"
-    ],
     "title": "用語集サイト",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://words.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/words/1.jpg"
-    ]
+    "category": "用語集 / 検索",
+    "summary": "経済学・心理学などの用語を、カテゴリ・五十音索引・全文検索の3方式で引ける辞典サイト。",
+    "repository": "https://github.com/ak2lab/words",
+    "image": "assets/cases/words.jpg"
   },
   {
-    "case_type": "自主制作・実用",
-    "category": "公式サイト / ブログ",
-    "description": "自作の静的サイト生成CMS（制作事例として別途掲載）で構築したAK²Labの公式サイト。固定ページとブログ記事をMarkdownで管理し、管理画面から静的HTMLを一括生成する。ヒーロー背景はThree.js系のパーティクル地形を参考に、透視投影とワイヤーフレームをCanvas 2Dへ手計算で移植したもの。ページ内には黄金矩形とフィボナッチ螺旋のCanvasアニメーションも配置している。日本語の全文検索はビルド時にuni/bi-gram索引を生成。公開側は事前生成した静的HTMLだけで動作し、明朝の見出し、広い余白、青1色のアクセントで全体を揃えている。",
-    "highlights": [
-      "自作CMSによるMarkdown原稿からの静的HTML一括生成",
-      "透視投影を手計算し、Canvas 2Dで描く3Dワイヤーフレーム地形",
-      "黄金矩形とフィボナッチ螺旋のCanvasアニメーション",
-      "ビルド時にuni/bi-gram索引を生成する日本語全文検索",
-      "明朝見出し・広い余白・青1色のアクセントによるデザイン",
-      "秘匿パス・CSRF・総当たり対策を備えた管理画面から更新できるブログ",
-      "公開側ではDBやPHPを使わず、生成済みの静的HTMLのみを配信",
-      "prefers-reduced-motionと画面外停止に対応したモーション"
-    ],
     "id": "ak2lab-site",
-    "purpose": "AK²Labの活動内容、ブログ、Web制作の案内を一つの公式サイトに整理するため。SE・プログラマーとWebデザイナーの両方を扱う方針を、情報構成・デザイン・生成表現にも反映している。",
-    "summary": "自作CMSで静的生成し、Canvas 2Dの3Dワイヤーフレームをヒーローに用いたAK²Lab公式サイト。",
-    "target_users": "AK²Labの活動やブログを読む人、Web制作の相談を検討している事業者",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SQLite",
-      "CSS"
-    ],
     "title": "AK²Lab公式サイト",
-    "type": "ブランドサイト",
-    "links": [
-      {
-        "type": "production",
-        "label": "サイトを見る",
-        "url": "https://ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/ak2lab-site/1.jpg"
-    ]
+    "category": "公式サイト / ブログ",
+    "summary": "自作CMSで静的生成し、Canvas 2Dの3Dワイヤーフレームをヒーローに用いたAK²Lab公式サイト。",
+    "repository": "https://github.com/ak2lab/ak2lab-site",
+    "image": "assets/cases/ak2lab-site.jpg"
   },
   {
-    "case_type": "自主制作・実用",
-    "category": "ポートフォリオ / 制作事例集",
-    "description": "AK²Labの制作事例をまとめるために設計・実装したポートフォリオサイト。PHPテンプレートとJSON/CSVで構成し、DB・ビルドツール・外部パッケージを使わずに動作する。トップのCanvasは、複数方向の進行波から高さと傾斜を求め、水面の法線が太陽を向く部分を明るくする自作の水面反射エンジン。ページヘッダーでは別方式の生成水面を使っている。制作事例はキーワード検索とサービス分類・技術・領域の複合絞り込みに対応し、参考価格・担当範囲・関連リンクをJSONで管理。対応スキルと使用ツールはCSVから読み込み、分類フィルター付きで表示する。登録データは検証スクリプトでタグ、リンク、画像パスなどの整合性を確認できる。",
-    "highlights": [
-      "DB・ビルド・外部パッケージを使わないPHP構成（データはJSON/CSV）",
-      "進行波の高さと傾斜から法線を求めて描く、トップの水面反射エンジン",
-      "制作事例のキーワード検索とサービス分類・技術・領域の複合絞り込み",
-      "参考価格・担当範囲・関連リンクを含む制作事例データ管理",
-      "対応スキル・使用ツールの分類フィルター付き表示",
-      "制作画面ギャラリーと技術別の索引",
-      "タグ・リンク・画像パスなどを確認するデータ検証スクリプト",
-      "大きな見出しと余白を基調にしたデザイン、prefers-reduced-motion対応"
-    ],
     "id": "portfolio-site",
-    "purpose": "制作事例、参考価格、担当範囲、技術情報を一か所に整理し、依頼を検討する人が制作内容を具体的に確認できるようにするため。サイト自体も既製テーマを使わず、現在の実装方針とデザインを反映している。",
-    "summary": "AK²Labの制作事例をまとめたポートフォリオサイト。生成水面とデータ駆動の事例管理を備えた、DBなし・ビルドなしのPHPサイト。",
-    "target_users": "AK²Labへの依頼を検討している事業者、制作事例や対応範囲を確認したい人",
-    "tech_stack": [
-      "PHP",
-      "JavaScript",
-      "Canvas API",
-      "CSV",
-      "CSS"
-    ],
     "title": "ポートフォリオサイト",
-    "type": "Webサイト",
-    "links": [],
-    "screenshots": [
-      "assets/cases/portfolio-site/1.jpg"
-    ]
+    "category": "ポートフォリオ / 制作事例集",
+    "summary": "AK²Labの制作事例をまとめたポートフォリオサイト。生成水面とデータ駆動の事例管理を備えた、DBなし・ビルドなしのPHPサイト。",
+    "repository": "https://github.com/ak2lab/portfolio-site",
+    "image": "assets/cases/portfolio-site.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "在庫管理 / 業務支援",
-    "description": "PHP 8.4（フレームワーク不使用）で構築。デモブランドは「ざいこ屋」。在庫を「現在数量（stock）＋追記型の移動台帳（stock_movements）」の二層で管理し、入庫・出庫・倉庫間移動・棚卸調整はすべて台帳を通して同一トランザクションで更新する（stock.qty＝台帳総和）。在庫不足の出庫は条件付きUPDATEで拒否し、マイナス在庫を作らない。ダッシュボードはKPI 4種、在庫推移SVG面グラフ（30日）、入出庫棒グラフ（14日）、在庫アラート一覧を表示。デモデータは実行日基準の相対日付で生成される。",
-    "highlights": [
-      "在庫の二層管理（stock ＋ stock_movements 追記型台帳）",
-      "同一トランザクションで stock.qty＝台帳総和を維持",
-      "条件付きUPDATEによるマイナス在庫禁止（同時実行でも）",
-      "ダッシュボード（KPI 4種＋SVG面グラフ30日＋棒グラフ14日）",
-      "入出庫・棚卸・移動履歴CSV・マスタCRUD"
-    ],
     "id": "inventory",
-    "purpose": "複数倉庫の在庫・入出庫・棚卸を、依存ライブラリなしのPHPで実装するため。在庫の履歴管理（追記型台帳とトランザクション整合、マイナス在庫禁止）と、ダッシュボード中心の管理画面を1本で扱った。",
-    "summary": "複数倉庫の在庫・入出庫・棚卸を、追記型の移動台帳で整合管理する在庫管理システム。",
-    "target_users": "小売・製造・倉庫などで在庫を管理する事業者",
-    "tech_stack": [
-      "PHP",
-      "SQLite",
-      "MySQL",
-      "PDO",
-      "JavaScript",
-      "SVG",
-      "CSV",
-      "CSS"
-    ],
     "title": "在庫管理システム",
-    "type": "Webアプリ",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://inventory.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/inventory/1.jpg"
-    ]
+    "category": "在庫管理 / 業務支援",
+    "summary": "複数倉庫の在庫・入出庫・棚卸を、追記型の移動台帳で整合管理する在庫管理システム。",
+    "repository": "https://github.com/ak2lab/inventory",
+    "image": "assets/cases/inventory.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "WordPressプラグイン / 検索",
-    "description": "既存のWordPressサイトへ後付けできる、設定駆動の汎用ファセット検索プラグイン「Flexible Facet Search」。プラグイン自身は投稿タイプもタクソノミーもカスタムフィールドも作らず、案件ごとに作られた既存のデータ構造を管理画面で選ぶだけで検索対象にする（デモの不動産の語彙はデモ環境側にしか存在しない）。ファセットごとのAND/OR（訪問者に切り替えさせることも可能）、数値の範囲検索、他の条件に追従する各選択肢の該当件数表示、許可リスト制の並び替え、タイブレークで安定するページ送り、URLへの条件保持とcanonical正規化に対応。JavaScriptを切っても素のGETフォームで全機能が動き、有効時はREST APIからサーバー描画済みのHTML断片を受け取って無リロード更新する（JSあり/なしで出力が1バイトも変わらないことをテストで担保）。出力はすべてテンプレート（16枚）で、テーマから1ファイル単位で上書きできる（フィルター24・アクション5）。検索対象・並び替えキーは保存済み設定の許可リスト経由でのみ使い、拡張フックは防御を緩めない設計。公開GET経路からのDB書き込みはゼロ。正しさはWP_Queryを使わない独立実装との総当たり照合で検証し、自動テスト1133項目・実ブラウザ検証80項目を全パス。件数集計はSELECT本数を選択肢数に比例させない設計で、500件・ファセット9個のデモ環境では選択肢を1000倍にしても発行本数が変わらない。英語ソース＋日本語翻訳同梱。WordPress 7.0以上・PHP 8.1以上。",
-    "highlights": [
-      "既存の投稿タイプ・タクソノミー・カスタムフィールドを管理画面で選ぶだけの設定駆動（プラグインはデータ構造を作らない）",
-      "ファセットごとのAND/OR切替・数値範囲・各選択肢件数のリアルタイム追従",
-      "JS無効でも全機能が動き、JS有効時はサーバー描画のHTML断片をRESTで差し替え（出力は1バイト一致）",
-      "件数集計のSELECT本数を選択肢数に比例させない設計（選択肢1000倍でも本数一定）",
-      "WP_Queryを使わない独立実装との総当たり照合・自動テスト1133項目・実ブラウザ検証80項目",
-      "許可リスト経由のみのクエリ組み立てと、防御を緩めない拡張フック（公開GETからのDB書き込みゼロ）",
-      "テンプレート16枚を1ファイル単位でテーマから上書き可能（フィルター24・アクション5）",
-      "fieldset/legend・aria-live・タップ領域44px・360px対応などのアクセシビリティ実装"
-    ],
     "id": "flexible-facet-search",
-    "purpose": "市販の検索プラグインでは足りない「案件固有のデータ構造への多条件絞り込み」を、WordPressの流儀（WP_Query・Settings API・REST API・ショートコード・フック・テンプレート上書き）のまま既存サイトへ後付けできる汎用部品として実装するため。素のPHPで作った汎用ファセット検索エンジン（制作事例「不動産サイト」）の思想をWordPressへ移植した。",
-    "summary": "既存サイトの投稿タイプ・タクソノミー・カスタムフィールドを、管理画面で選ぶだけで多条件の絞り込み検索にできる汎用WordPressプラグイン。",
-    "target_users": "運用中のWordPressサイトに物件・商品・施設などの絞り込み検索を追加したい事業者・制作会社",
-    "tech_stack": [
-      "WordPress",
-      "PHP",
-      "JavaScript",
-      "MySQL",
-      "REST API",
-      "Fetch API",
-      "History API",
-      "CSS"
-    ],
     "title": "ファセット検索プラグイン",
-    "type": "WordPressプラグイン",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://ffs.ak2lab.com/search/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/flexible-facet-search/1.jpg",
-      "assets/cases/flexible-facet-search/2.jpg",
-      "assets/cases/flexible-facet-search/3.jpg",
-      "assets/cases/flexible-facet-search/4.jpg",
-      "assets/cases/flexible-facet-search/5.jpg",
-      "assets/cases/flexible-facet-search/6.jpg"
-    ]
+    "category": "WordPressプラグイン / 検索",
+    "summary": "既存サイトの投稿タイプ・タクソノミー・カスタムフィールドを、管理画面で選ぶだけで多条件の絞り込み検索にできる汎用WordPressプラグイン。",
+    "repository": "https://github.com/ak2lab/flexible-facet-search",
+    "image": "assets/cases/flexible-facet-search.jpg"
   },
   {
-    "case_type": "自主制作・公開デモ",
-    "category": "文化アーカイブ / 3Dブランドサイト",
-    "description": "画面全体がひとつの Three.js シーンで、スクロール量がそのまま物語の時間軸になる3Dスクロールストーリーテリングサイト。トップは画面高さ約12枚分（1,240svh）を「発見・残すべきもの・修復・走査・構造化・公開・継承」の7幕に区切り、一枚の紙が裂けて褪色し、修復され、走査光にさらされ、点群となって意味の網目に変わるまでを、途切れのない一続きの映像として見せる。舞う粒子は塵→繊維→画素→ノードと役割を変えるが実体は最後まで同一の粒子系で、事業工程の移り変わりを「一つのものの変化」として表している。カメラ距離・仰角、紙の破損度・修復度、走査光、粒子数、背景トーンなど18の連続値を幕ごとのキーフレームで定義し、この幕定義を3D描画と本文表示の唯一の元データとすることで、映像と文章が常に同じ進行度で動く。描画は端末性能に応じた4段階の品質制御を持ち、45fpsを2秒下回ると最大2段まで自動で落とす。動きを抑える設定（prefers-reduced-motion）やWebGL非対応の環境ではシーンを生成せず静的表示に切り替える。3D計算は three・React に依存しない純関数として分離し、ブラウザ無しで検証できる形にした（設計判断の記録90件・テスト142件）。土台は Next.js 16（App Router・静的書き出し）+ React 19 + TypeScript で、事業紹介・工程・技術・実績・資料アーカイブ・ジャーナルの各ページを持つ。資料データは型付きの TypeScript コンテンツモデルとリポジトリ層で構造化し、将来のDB・API差し替えを見据えた設計とした。公開範囲はビルド成果物の境界として実装し、非公開資料は生成物そのものから除外、翻刻は人手確認済みと機械読みを区別して表示する。墨・和紙・藍・銅を基調とした配色、明朝と等幅の書体、影を使わず罫線と余白で組む構成で、WCAG 2.1 AA を手計算で検算しながら仕上げた。",
-    "highlights": [
-      "スクロールが物語の時間軸になる3D演出（画面高さ約12枚分＝1,240svhを7幕に構成し、紙が裂け・修復され・走査され・意味の網目になるまでを一続きで見せる）",
-      "舞う粒子は塵→繊維→画素→ノードと役割を変えながら実体は同一の粒子系のまま（工程の移り変わりを一つのものの変化として表現）",
-      "カメラ・紙の破損／修復・走査光・粒子数など18の連続値を幕ごとのキーフレームで定義し、3D描画と本文表示を同じ幕定義から生成",
-      "端末性能に応じた4段階の品質制御と自動降格（45fpsを2秒下回ると最大2段）、粒子数の上限設計",
-      "prefers-reduced-motion・WebGL非対応環境ではシーンを生成しない静的フォールバック",
-      "3D計算をthree・React非依存の純関数として分離し、ブラウザ無しで検証（設計判断の記録90件・テスト142件）",
-      "型付きTypeScriptコンテンツモデルとリポジトリ層による資料データ構造（将来のDB・API差し替えを見据えた設計）",
-      "資料アーカイブの一覧・詳細と、所蔵先・人物・キーワードなどのメタデータ表示",
-      "公開範囲をビルド成果物の境界として実装（非公開資料は生成物から除外）",
-      "翻刻の人手確認済み行と機械読み行を区別した表示",
-      "墨・和紙・藍・銅の配色と明朝・等幅書体、影を使わず罫線と余白で組むアートディレクション",
-      "WCAG 2.1 AA をコントラスト手計算で検算したアクセシビリティ対応",
-      "Next.js の静的書き出しによる公開（サーバー不要・画像はAVIF/WebPを事前生成）"
-    ],
     "id": "tsugiha",
-    "purpose": "世界観の設定、物語の幕構成、モーション設計といった演出の根幹から、Next.js/TypeScript の実装、WebGL・シェーダ表現、アクセシビリティまでを一貫して設計・実装できることを示すため。既製テーマやスクロール演出ライブラリの組み合わせでは代替できない、題材に固有の表現を白紙から起こす制作を形にした作品。AIエージェントを使いながら、設計者として一つのWeb事業を立ち上げた。",
-    "summary": "スクロールがそのまま物語の時間軸になる、Three.js（WebGL・GLSLシェーダ）による3Dスクロールストーリーテリングのブランドサイト。文化資料の修復・デジタル化・公開を担う専門会社を題材に、世界観の設定から演出設計・実装まで一貫して制作した。",
-    "target_users": "3D・スクロール演出を伴うブランドサイトを検討している事業者、文化施設・専門事業のサイト制作を検討している事業者、WebGL表現とNext.js/TypeScript・アクセシビリティの実装力を確認したい人",
-    "tech_stack": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Three.js",
-      "CSS"
-    ],
     "title": "次葉文化アーカイブ",
-    "type": "3Dスクロールストーリーテリング",
-    "links": [
-      {
-        "type": "demo",
-        "label": "デモを見る",
-        "url": "https://tsugiha.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/tsugiha/1.jpg"
-    ]
+    "category": "文化アーカイブ / 3Dブランドサイト",
+    "summary": "スクロールがそのまま物語の時間軸になる、Three.js（WebGL・GLSLシェーダ）による3Dスクロールストーリーテリングのブランドサイト。文化資料の修復・デジタル化・公開を担う専門会社を題材に、世界観の設定から演出設計・実装まで一貫して制作した。",
+    "repository": "https://github.com/ak2lab/tsugiha",
+    "image": "assets/cases/tsugiha.jpg"
   },
   {
-    "case_type": "自主制作・実用",
-    "category": "リファレンス / 制作ワークベンチ",
-    "description": "読んで終わる資料ではなく、制作中に開いて手を動かす作業台として作った。トップは等高線の地形で、入口ごとの島を押すとその一覧へ直行する。島の輪郭は地形の等値線そのもので、Canvasが場を描き、当たった島は丘が持ち上がって輪郭が広がる。狭い画面では地図をやめ、同じ色で並ぶ一覧に切り替える。困り事から引く逆引きには、答えのそばに動く見本を置いた。つまみを動かすと見本がその場で変わり、生成されたCSSをコピーできる。HTMLとCSSは読み取り専用の対で見せ、色や余白の値がどこから来ているかを出発点のCSSへ辿れる。見本はiframeに閉じてあるので、資料側のCSSと混ざらない。コピペで使えるパターン集は貼るコードそのものをプレビューし、背景の動く素材は速さ・密度・色を変えた設定のまま単一HTMLで持ち帰れる。素材ごとに向く場面・避ける場面・依存と負荷まで書いてある。様式のカタログと実物のデザインシステムは、同じ内容を別の規則で組み直した実画面として見比べられる。原稿はMarkdown、公開物は素のHTMLとSVGとCSSで、生成器はPythonで自作している（外部ライブラリ不使用）。画面に出る件数は原稿から数えて埋めるので、資料が増えても表示と中身がずれない。探しているものへ何クリックで着くかを規格として先に決め、それを測る検査を通してから公開する作りにした。JavaScriptが無くても全ページ読める。",
-    "highlights": [
-      "トップは等高線の地形。入口ごとの島を押すとその一覧へ直行し、当たった島は丘が持ち上がって輪郭が広がる",
-      "地図はCanvasが場を描き、島はSVGのリンク。JavaScriptが動かなくても入口は選べ、狭い画面では同じ色の一覧に切り替わる",
-      "逆引きの答えに、つまみで動く見本を付けた。値を変えると見本がその場で変わり、生成されたCSSをコピーできる",
-      "HTMLとCSSは読み取り専用の対で見せ、値の出どころを出発点のCSSへ辿れる。見本はiframeに閉じ、資料側のCSSと混ざらない",
-      "コピペで使えるパターン集は、貼るコードそのものをプレビューする。LP・問い合わせフォーム・記事一覧には組み上げ手引きが付く",
-      "動く素材は調整した設定のまま単一HTMLで持ち帰れ、明暗を切り替えて確かめられる。向く場面・避ける場面・依存と負荷も添えた",
-      "様式のカタログと実物のデザインシステムは、同じ内容・同じ画面で組み直した実画面として見比べられる",
-      "画面に出る件数は原稿から数えて埋める。資料が増えても、表示と中身がずれない",
-      "Python製の自作生成器（外部ライブラリ不使用）。到達までのクリック数と参照の切れは、検査ハーネスで毎回測る"
-    ],
     "id": "design-reference",
-    "purpose": "制作の途中で手が止まったときに引ける自分用の引き出しとして始め、読むだけでは手が動かないと分かった時点で、試して持ち帰れる作業台へ作り直した。Webデザインの定石を理解して仕事をしていることが、公開コンテンツとして伝わるようにする目的も兼ねる。",
-    "summary": "入口を等高線の地図にしたWebデザインの制作作業台。困り事から引くと、つまみで調整できる見本と、そのまま貼れるコードが並ぶ。",
-    "target_users": "Webサイトを作る制作者・開発者、デザインの判断に根拠がほしい人、実装の出発点になるコードを探している人",
-    "tech_stack": [
-      "Python",
-      "JavaScript",
-      "Canvas API",
-      "Markdown",
-      "SVG",
-      "CSS",
-      "localStorage",
-      "Playwright"
-    ],
     "title": "Webデザイン制作支援リファレンス",
-    "type": "制作支援リファレンスサイト",
-    "links": [
-      {
-        "type": "production",
-        "label": "サイトを見る",
-        "url": "https://design.ak2lab.com/"
-      }
-    ],
-    "screenshots": [
-      "assets/cases/design-reference/1.jpg"
-    ]
+    "category": "リファレンス / 制作ワークベンチ",
+    "summary": "入口を等高線の地図にしたWebデザインの制作作業台。困り事から引くと、つまみで調整できる見本と、そのまま貼れるコードが並ぶ。",
+    "repository": "https://github.com/ak2lab/design-reference",
+    "image": "assets/cases/design-reference.jpg"
   }
 ]
