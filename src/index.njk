@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>制作事例と技術 | AK²Lab</title>
+    <meta name="description" content="AK²LabのWebサイト・Webアプリ・業務システムの制作事例と技術資料。">
+    <link rel="icon" href="/assets/logo.png">
+    <link rel="stylesheet" href="/assets/site.css">
+    <script src="/assets/motion.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">本文へ移動</a>
+    <header class="header frame">
+      <a class="brand" href="/">
+        <img src="/assets/logo.png" alt="" width="48" height="48">
+        <span>AK²Lab</span>
+      </a>
+      <nav aria-label="主なページ">
+        <a href="/#works">制作事例</a>
+        <a href="https://github.com/ak2lab">GitHub</a>
+        <a href="https://ak2lab.com/">公式サイト</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero frame">
+        <div class="hero-copy">
+          <p class="intro">Webサイト・Webアプリ・業務システム</p>
+          <h1>画面から仕組みまで<br>作って、確かめる</h1>
+          <p>使う人の画面と、その奥で動く仕組み。AK²Labが制作したWebサイトやアプリを、技術と設計の視点から紹介します。</p>
+          <a class="primary" href="#works">制作事例を見る <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art">
+          <canvas aria-hidden="true"></canvas>
+          <img src="/assets/logo.png" alt="" width="512" height="512">
+          <button class="motion-toggle" type="button" hidden>動きを止める</button>
+        </div>
+      </section>
+      <section class="frame works" id="works">
+        <div class="section-heading">
+          <h2>制作事例</h2>
+          <p>目的、使用技術、制作で考えたことを、事例ごとのリポジトリにまとめています。</p>
+        </div>
+        <div class="case-grid">
+          {% for item in cases %}
+          <article class="case">
+            <a href="{{ item.repository | escape }}">
+              {% if item.image %}
+              <div class="case-image">
+                <img src="/{{ item.image | escape }}" alt="{{ item.title | escape }}の画面" loading="lazy" width="1440" height="900">
+              </div>
+              {% endif %}
+              <p class="category">{{ item.category | escape }}</p>
+              <h3>{{ item.title | escape }} <span aria-hidden="true">↗</span></h3>
+            </a>
+            <p>{{ item.summary | escape }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+    <footer class="frame footer">
+      <a class="brand" href="/">AK²Lab</a>
+      <nav aria-label="関連サイト">
+        <a href="https://ak2lab.com/">公式サイト</a>
+        <a href="https://github.com/ak2lab">GitHub</a>
+        <a href="https://x.com/aidev_ak">X</a>
+      </nav>
+      <p>自主制作・公開デモを含む制作事例と技術資料を紹介しています。</p>
+    </footer>
+  </body>
+</html>

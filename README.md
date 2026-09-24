@@ -15,6 +15,8 @@ npm start
 
 `data/cases.json` と `assets/cases/` が掲載データと画像です。内部メモや開発環境の設定を含めません。
 
+ページの文章・HTML構造は `src/index.njk` で編集します。通常のHTMLに、事例カードを繰り返すための `{% for %}` と値を差し込む `{{ }}` だけを加えたテンプレートです。見た目は `assets/site.css` で調整します。事例の内容は `data/cases.json` を直接編集せず、事例ノートから公開用データを生成します。
+
 ## 公開
 
 GitHub Pagesの公開元をGitHub Actionsに設定します。mainブランチへの送信で検査・ビルドを行い、成功した `_site` だけを公開します。
