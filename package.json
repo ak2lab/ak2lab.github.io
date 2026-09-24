@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": {"build": "eleventy", "start": "eleventy --serve"},
-  "devDependencies": {"@11ty/eleventy": "3.1.6"}
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6",
+    "esbuild": "0.28.2"
+  },
+  "dependencies": {
+    "three": "0.186.0"
+  }
 }

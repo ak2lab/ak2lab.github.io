@@ -3,70 +3,128 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#05070b">
     <title>制作事例と技術 | AK²Lab</title>
     <meta name="description" content="AK²LabのWebサイト・Webアプリ・業務システムの制作事例と技術資料。">
     <link rel="icon" href="/assets/logo.png">
     <link rel="stylesheet" href="/assets/site.css">
-    <script src="/assets/motion.js" defer></script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="/assets/site.js" defer></script>
+    <script src="/assets/hero.js" type="module"></script>
   </head>
   <body>
     <a class="skip" href="#main">本文へ移動</a>
-    <header class="header frame">
-      <a class="brand" href="/">
-        <img src="/assets/logo.png" alt="" width="48" height="48">
-        <span>AK²Lab</span>
-      </a>
-      <nav aria-label="主なページ">
-        <a href="/#works">制作事例</a>
-        <a href="https://github.com/ak2lab">GitHub</a>
-        <a href="https://ak2lab.com/">公式サイト</a>
-      </nav>
+    <header class="header">
+      <div class="frame header-inner">
+        <a class="brand" href="/">
+          <svg class="brand-mark" viewBox="96 96 320 320" aria-hidden="true">
+            <use href="#logo-lines"></use>
+          </svg>
+          <span>AK²Lab</span>
+        </a>
+        <nav aria-label="主なページ">
+          <a href="/#works">制作事例</a>
+          <a href="https://github.com/ak2lab">GitHub</a>
+          <a href="https://ak2lab.com/">公式サイト</a>
+        </nav>
+      </div>
     </header>
     <main id="main">
-      <section class="hero frame">
-        <div class="hero-copy">
-          <p class="intro">Webサイト・Webアプリ・業務システム</p>
-          <h1>画面から仕組みまで<br>作って、確かめる</h1>
-          <p>使う人の画面と、その奥で動く仕組み。AK²Labが制作したWebサイトやアプリを、技術と設計の視点から紹介します。</p>
-          <a class="primary" href="#works">制作事例を見る <span aria-hidden="true">→</span></a>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-stage" aria-hidden="true">
+          <canvas class="hero-canvas"></canvas>
+          <svg class="hero-logo" viewBox="96 96 320 320">
+            <defs>
+              <g id="logo-lines">
+                <path pathLength="1" d="M108 116H316"/>
+                <path pathLength="1" d="M118 104V398"/>
+                <path pathLength="1" d="M279 116L115 398"/>
+                <path pathLength="1" d="M274 116V362"/>
+                <path pathLength="1" d="M175 295H254"/>
+                <path pathLength="1" d="M280 285L350 205"/>
+                <path pathLength="1" d="M300 282L394 390"/>
+                <path pathLength="1" d="M394 206V404"/>
+                <path pathLength="1" d="M156 394H404"/>
+                <path pathLength="1" d="M332 116H394V142L342 156V180H404"/>
+              </g>
+            </defs>
+            <use href="#logo-lines"></use>
+          </svg>
         </div>
-        <div class="hero-art">
-          <canvas aria-hidden="true"></canvas>
-          <img src="/assets/logo.png" alt="" width="512" height="512">
-          <button class="motion-toggle" type="button" hidden>動きを止める</button>
+        <div class="frame hero-copy">
+          <p class="intro" data-scramble>Webサイト・Webアプリ・業務システム</p>
+          <h1 id="hero-title">
+            <span class="line"><span>画面から仕組みまで</span></span>
+            <span class="line"><span>作って、確かめる</span></span>
+          </h1>
+          <p class="lead">使う人の画面と、その奥で動く仕組み。AK²Labが制作したWebサイトやアプリを、技術と設計の視点から紹介します。</p>
+          <a class="primary" href="#works" data-magnetic>
+            <span>制作事例を見る</span>
+            <span class="primary-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="hero-controls">
+          <button class="control" type="button" data-scatter hidden>ロゴを分解する</button>
+          <button class="control" type="button" data-motion-toggle>動きを止める</button>
         </div>
       </section>
-      <section class="frame works" id="works">
-        <div class="section-heading">
-          <h2>制作事例</h2>
-          <p>目的、使用技術、制作で考えたことを、事例ごとのリポジトリにまとめています。</p>
-        </div>
-        <div class="case-grid">
-          {% for item in cases %}
-          <article class="case">
-            <a href="{{ item.repository | escape }}">
-              {% if item.image %}
-              <div class="case-image">
-                <img src="/{{ item.image | escape }}" alt="{{ item.title | escape }}の画面" loading="lazy" width="1440" height="900">
+      <section class="works" id="works" aria-labelledby="works-title">
+        <div class="frame">
+          <div class="section-heading">
+            <h2 id="works-title">制作事例</h2>
+            <p>目的、使用技術、制作で考えたことを、事例ごとのリポジトリにまとめています。</p>
+            <svg class="trace" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+              <path pathLength="1" d="M0 12H320L336 2H880L896 22H1200"/>
+            </svg>
+          </div>
+          <div class="case-grid">
+            {% for item in cases %}
+            <article class="case" data-case data-reveal>
+              <div class="case-inner">
+                {% if item.image %}
+                <div class="case-image">
+                  <img src="/{{ item.image | escape }}" alt="{{ item.title | escape }}の画面" loading="lazy" decoding="async" width="1440" height="900">
+                </div>
+                {% endif %}
+                <div class="case-body">
+                  <p class="category">{{ item.category | escape }}</p>
+                  <h3><a href="{{ item.repository | escape }}">{{ item.title | escape }}</a> <span class="case-arrow" aria-hidden="true">↗</span></h3>
+                  <p class="summary">{{ item.summary | escape }}</p>
+                </div>
               </div>
-              {% endif %}
-              <p class="category">{{ item.category | escape }}</p>
-              <h3>{{ item.title | escape }} <span aria-hidden="true">↗</span></h3>
-            </a>
-            <p>{{ item.summary | escape }}</p>
-          </article>
-          {% endfor %}
+            </article>
+            {% endfor %}
+          </div>
         </div>
       </section>
     </main>
-    <footer class="frame footer">
-      <a class="brand" href="/">AK²Lab</a>
-      <nav aria-label="関連サイト">
-        <a href="https://ak2lab.com/">公式サイト</a>
-        <a href="https://github.com/ak2lab">GitHub</a>
-        <a href="https://x.com/aidev_ak">X</a>
-      </nav>
-      <p>自主制作・公開デモを含む制作事例と技術資料を紹介しています。</p>
+    <footer class="footer">
+      <div class="frame">
+        <nav class="footer-links" aria-label="関連サイト">
+          <a href="https://ak2lab.com/" data-case data-reveal>
+            <span class="footer-name">公式サイト</span>
+            <span class="footer-url">ak2lab.com</span>
+          </a>
+          <a href="https://github.com/ak2lab" data-case data-reveal>
+            <span class="footer-name">GitHub</span>
+            <span class="footer-url">github.com/ak2lab</span>
+          </a>
+          <a href="https://x.com/aidev_ak" data-case data-reveal>
+            <span class="footer-name">X</span>
+            <span class="footer-url">@aidev_ak</span>
+          </a>
+        </nav>
+        <div class="footer-bottom">
+          <a class="brand" href="/">
+            <svg class="brand-mark" viewBox="96 96 320 320" aria-hidden="true">
+              <use href="#logo-lines"></use>
+            </svg>
+            <span>AK²Lab</span>
+          </a>
+          <p>自主制作・公開デモを含む制作事例と技術資料を紹介しています。</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
