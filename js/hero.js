@@ -170,7 +170,7 @@ function start() {
   scene.add(floor);
 
   // 漂う塵
-  const dustCount = innerWidth < 760 ? 160 : 360;
+  const dustCount = innerWidth < 760 ? 500 : 1200;
   const dustPositions = [], dustSeeds = [];
   for (let i = 0; i < dustCount; i++) {
     dustPositions.push(MathUtils.randFloatSpread(28), MathUtils.randFloat(0, 10), MathUtils.randFloat(-14, 4));
@@ -196,7 +196,7 @@ function start() {
         p.x += sin(uTime * 0.25 + seed * 20.0) * 0.3;
         vec4 mv = modelViewMatrix * vec4(p, 1.0);
         gl_Position = projectionMatrix * mv;
-        gl_PointSize = uPixel * (0.8 + seed * 1.8) * (9.0 / -mv.z);
+        gl_PointSize = uPixel * (1.4 + seed * 2.6) * (11.0 / -mv.z);
         vAlpha = (0.45 + 0.35 * sin(uTime * (0.8 + seed * 1.6) + seed * 40.0)) * smoothstep(26.0, 7.0, -mv.z);
       }`,
     fragmentShader: /* glsl */`
@@ -205,7 +205,7 @@ function start() {
       void main() {
         float r = length(gl_PointCoord - 0.5);
         if (r > 0.5) discard;
-        gl_FragColor = vec4(mix(uColor, vec3(1.0), 0.4), smoothstep(0.5, 0.0, r) * vAlpha * 0.8);
+        gl_FragColor = vec4(mix(uColor, vec3(1.0), 0.4), smoothstep(0.5, 0.0, r) * vAlpha);
       }`,
   })));
 
