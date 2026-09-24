@@ -170,7 +170,7 @@ function start() {
   scene.add(floor);
 
   // 漂う塵
-  const dustCount = innerWidth < 760 ? 500 : 1200;
+  const dustCount = innerWidth < 760 ? 330 : 780;
   const dustPositions = [], dustSeeds = [];
   for (let i = 0; i < dustCount; i++) {
     dustPositions.push(MathUtils.randFloatSpread(28), MathUtils.randFloat(0, 10), MathUtils.randFloat(-14, 4));
