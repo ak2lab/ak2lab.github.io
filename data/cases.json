@@ -195,7 +195,7 @@
     "id": "ak2lab-site",
     "title": "AK²Lab公式サイト",
     "category": "公式サイト / ブログ",
-    "summary": "自作CMSで静的生成し、Canvas 2Dの3Dワイヤーフレームをヒーローに用いたAK²Lab公式サイト。",
+    "summary": "自作CMSで静的生成し、空・水面・水中をThree.jsで一つの場面に描くヒーローを備えたAK²Lab公式サイト。",
     "repository": "https://github.com/ak2lab/ak2lab-site",
     "image": "assets/cases/ak2lab-site.jpg"
   },
@@ -203,7 +203,7 @@
     "id": "portfolio-site",
     "title": "ポートフォリオサイト",
     "category": "ポートフォリオ / 制作事例集",
-    "summary": "AK²Labの制作事例をまとめたポートフォリオサイト。生成水面とデータ駆動の事例管理を備えた、DBなし・ビルドなしのPHPサイト。",
+    "summary": "AK²Labの制作事例をまとめたポートフォリオサイト。Three.jsで描く海のヒーローとデータ駆動の事例管理を備えた、DBなし・ビルドなしのPHPサイト。",
     "repository": "https://github.com/ak2lab/portfolio-site",
     "image": "assets/cases/portfolio-site.jpg"
   },
